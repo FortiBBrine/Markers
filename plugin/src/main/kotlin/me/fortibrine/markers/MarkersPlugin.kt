@@ -11,11 +11,11 @@ import org.bukkit.plugin.Plugin
 import org.bukkit.plugin.java.JavaPlugin
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
-import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import org.koin.java.KoinJavaComponent.getKoin
 import org.koin.ksp.generated.module
-import org.spongepowered.configurate.gson.GsonConfigurationLoader
+import org.spongepowered.configurate.yaml.NodeStyle
+import org.spongepowered.configurate.yaml.YamlConfigurationLoader
 import java.io.File
 
 class MarkersPlugin: JavaPlugin() {
@@ -24,8 +24,9 @@ class MarkersPlugin: JavaPlugin() {
 
     override fun onEnable() {
 
-        val loader = GsonConfigurationLoader.builder()
-            .path(File(dataFolder, "config.json").toPath())
+        val loader = YamlConfigurationLoader.builder()
+            .nodeStyle(NodeStyle.BLOCK)
+            .path(File(dataFolder, "config.yml").toPath())
             .build()
 
         val node = loader.load()

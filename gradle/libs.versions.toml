@@ -23,7 +23,7 @@ koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin-
 koin-annotations = { group = "io.insert-koin", name = "koin-annotations", version.ref = "koin-annotations" }
 koin-ksp-compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koin-annotations" }
 litecommands = { module = "dev.rollczi:litecommands-bukkit", version.ref = "litecommands" }
-configurate = { module = "org.spongepowered:configurate-gson", version.ref = "configurate" }
+configurate = { module = "org.spongepowered:configurate-yaml", version.ref = "configurate" }
 sqlite = { module = "org.xerial:sqlite-jdbc", version.ref = "sqlite" }
 
 [plugins]
